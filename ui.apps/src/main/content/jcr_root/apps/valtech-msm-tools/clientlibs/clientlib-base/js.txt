@@ -1,0 +1,5 @@
+#base=js
+waitingIndicator.js
+infoDialog.js
+blueprintmanager.js
+livecopymanager.js

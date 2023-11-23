@@ -1,0 +1,66 @@
+{
+  "notification-sites": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent"
+    },
+    "blueprints": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent"
+      },
+      "no-owner": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "with-owner": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "siteOwnerEmail": ["one@example.com"]
+        }
+      },
+      "multiple-owner": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "siteOwnerEmail": ["one@example.com", "two@example.com"]
+        }
+      }
+    },
+    "live-copies": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent"
+      },
+      "no-blueprint": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "no-owner": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "with-owner": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "siteOwnerEmail": ["lc-one@example.com"]
+        }
+      },
+      "multiple-owner": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "siteOwnerEmail": ["lc-one@example.com", "lc-two@example.com"]
+        }
+      }
+    }
+  }
+}

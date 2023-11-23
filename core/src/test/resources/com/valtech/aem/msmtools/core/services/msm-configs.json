@@ -1,0 +1,12 @@
+{
+  "msm": {
+    "jcr:primaryType": "sling:Folder",
+    "msm-tools-blueprints": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "sitePath": "/content/msm-sites/language-masters"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.live-copy-item-row.empty-row {
+  /* this odd styling makes so that the list is still lazy loaded, as with 0 height
+   or hidden the loading does not happen... */
+  display: block !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}

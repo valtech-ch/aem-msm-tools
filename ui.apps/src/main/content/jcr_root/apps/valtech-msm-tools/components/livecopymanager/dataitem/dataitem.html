@@ -1,0 +1,35 @@
+<tr data-sly-use.model="com.valtech.aem.msmtools.core.models.LiveCopyManagerDataItem"
+    is="coral-table-row"
+    class="foundation-collection-item live-copy-item-row ${model.targetPath ? '' : 'empty-row'}"
+    data-foundation-collection-item-id="${model.targetPath}"
+    data-target-path="${model.targetPath}"
+    data-source-path="${model.sourcePath}"
+    data-last-rolled-out-version="${model.lastRolledOutVersion}"
+    data-live-copy-root-path="${model.liveCopyRootPath}"
+    data-livecopy-status="${model.liveCopyStatus}">
+    <td is="coral-table-cell">
+        <coral-checkbox coral-table-rowselect/>
+    </td>
+    <td is="coral-table-cell">
+        ${model.pageTitle}
+    </td>
+    <td is="coral-table-cell">
+        ${model.targetPath}
+    </td>
+    <td is="coral-table-cell">
+        ${model.statusName}
+    </td>
+    <td is="coral-table-cell">
+        ${model.lastRolledOut}
+    </td>
+
+    <td is="coral-table-cell">
+        <sly data-sly-test="${model.publicationStatus.date}">
+            ${model.publicationStatus.date}
+            <div class="foundation-layout-util-subtletext">${model.publicationStatus.text}</div>
+        </sly>
+        <sly data-sly-test="${!model.publicationStatus.date && model.publicationStatus.text}">
+            ${model.publicationStatus.text}
+        </sly>
+    </td>
+</tr>

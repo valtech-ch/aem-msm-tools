@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Livecopy Manager"
+            sling:resourceType="granite/ui/components/shell/collectionpage"
+            pageURITemplate="/apps/valtech-msm-tools/pages/livecopymanager.html${requestPathInfo.suffix}"
+            consoleId="livecopy-manager"
+            modeGroup="msm-tools-livecopy-pages"
+            targetCollection=".msm-tools-livecopy-pages">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/includeclientlibs"
+                    categories="[coralui3,granite.ui.coral.foundation,cq.common.wcm,cq.sites.collectionpage,valtech.msm-tools.base]"/>
+        </head>
+        <actions jcr:primaryType="nt:unstructured">
+            <selection jcr:primaryType="nt:unstructured">
+                <update
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    activeSelectionCount="multiple"
+                    action="valtech.msmtools.liveCopyManager.update"
+                    activeCondition="valtech.msmtools.liveCopyManager.canUpdate"
+                    icon="sync"
+                    text="Update"
+                    target=".msm-tools-livecopy-pages"
+                    variant="actionBar"/>
+                <markAsDone
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    activeSelectionCount="multiple"
+                    action="valtech.msmtools.liveCopyManager.markAsDone"
+                    activeCondition="valtech.msmtools.liveCopyManager.canMarkAsDone"
+                    text="Mark as Reviewed"
+                    icon="checkCircle"
+                    target=".msm-tools-livecopy-pages"
+                    variant="actionBar">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="valtech-msm-tools/rendercondition/mark-as-done-action"/>
+                </markAsDone>
+                <showChanges
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    activeSelectionCount="single"
+                    action="valtech.msmtools.liveCopyManager.compare"
+                    activeCondition="valtech.msmtools.liveCopyManager.canCompare"
+                    text="Show changes"
+                    icon="compare"
+                    target=".msm-tools-livecopy-pages"
+                    variant="actionBar">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="valtech-msm-tools/rendercondition/version-compare-action"/>
+                </showChanges>
+                <edit
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    activeSelectionCount="single"
+                    action="foundation.link"
+                    activeCondition="valtech.msmtools.liveCopyManager.canEdit"
+                    icon="edit"
+                    text="Edit"
+                    target=".msm-tools-livecopy-pages"
+                    variant="actionBar">
+                    <data
+                        jcr:primaryType="nt:unstructured"
+                        href.uritemplate="/bin/wcmcommand?cmd=open&amp;_charset_=utf-8&amp;path={item}"
+                        target="_blank"/>
+                </edit>
+            </selection>
+        </actions>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="valtech-msm-tools/components/livecopymanager/title"/>
+        <views jcr:primaryType="nt:unstructured">
+            <list
+                    jcr:primaryType="nt:unstructured"
+                    granite:rel="msm-tools-livecopy-pages"
+                    sling:resourceType="granite/ui/components/coral/foundation/table"
+                    icon="viewList"
+                    layoutId="list"
+                    metaResourceType="cq/gui/components/coral/admin/page/meta"
+                    modeGroup="msm-tools-livecopy-pages"
+                    path="${requestPathInfo.suffix}"
+                    selectionMode="row"
+                    limit="9999"
+                    src="${requestPathInfo.resourcePath}.html${requestPathInfo.suffix}{?limit}">
+                <columns jcr:primaryType="nt:unstructured">
+                    <select
+                            jcr:primaryType="nt:unstructured"
+                            select="{Boolean}true"/>
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            sortable="{Boolean}true"
+                            jcr:title="Title"/>
+                    <path
+                            jcr:primaryType="nt:unstructured"
+                            name="path"
+                            sortable="{Boolean}true"
+                            jcr:title="Path"/>
+                    <livecopyStatus
+                            jcr:primaryType="nt:unstructured"
+                            sortable="{Boolean}true"
+                            jcr:title="State"/>
+                    <lastUpdated
+                            jcr:primaryType="nt:unstructured"
+                            sortable="{Boolean}true"
+                            jcr:title="Updated"/>
+                    <publicationStatus
+                            jcr:primaryType="nt:unstructured"
+                            sortable="{Boolean}true"
+                            jcr:title="Published"/>
+                </columns>
+                <datasource
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="valtech-msm-tools/components/livecopymanager/datasource"
+                        itemResourceType="valtech-msm-tools/components/livecopymanager/dataitem"
+                        path="${requestPathInfo.suffix}"/>
+            </list>
+        </views>
+    </jcr:content>
+</jcr:root>

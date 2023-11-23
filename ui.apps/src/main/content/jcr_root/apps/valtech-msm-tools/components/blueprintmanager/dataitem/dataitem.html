@@ -1,0 +1,26 @@
+<tr data-sly-use.model="com.valtech.aem.msmtools.core.models.BlueprintManagerDataItem"
+    is="coral-table-row"
+    class="foundation-collection-item live-copy-row"
+    data-foundation-collection-item-id="${model.liveCopyPath}"
+    data-region="${model.region}"
+    data-language="${model.language}"
+    data-livecopy-path="${model.liveCopyPath}">
+    <td is="coral-table-cell">
+        <coral-checkbox coral-table-rowselect/>
+    </td>
+    <td is="coral-table-cell">
+        ${model.region}
+    </td>
+    <td is="coral-table-cell">
+        ${model.language}
+    </td>
+    <td is="coral-table-cell" class="col-status">
+        <!-- lazy loaded via JS -->
+    </td>
+    <td is="coral-table-cell">
+        <a href="${model.liveCopyManagerPage}${model.liveCopyPath}" target="_blank">${model.liveCopyPath}</a>
+    </td>
+    <td is="coral-table-cell" class="col-last-modified">
+        <!-- lazy loaded via JS -->
+    </td>
+</tr>

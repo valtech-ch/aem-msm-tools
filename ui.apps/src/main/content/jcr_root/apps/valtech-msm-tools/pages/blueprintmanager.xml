@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Blueprint Manager"
+        sling:resourceType="granite/ui/components/shell/collectionpage"
+        pageURITemplate="/apps/valtech-msm-tools/pages/blueprintmanager.html${requestPathInfo.suffix}"
+        consoleId="blueprint-manager"
+        modeGroup="msm-tools-livecopies"
+        targetCollection=".msm-tools-livecopies">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/includeclientlibs"
+                categories="[coralui3,granite.ui.coral.foundation,cq.common.wcm,valtech.msm-tools.base]"/>
+        </head>
+        <actions jcr:primaryType="nt:unstructured">
+            <selection jcr:primaryType="nt:unstructured">
+                <livecopyManager
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    activeSelectionCount="single"
+                    action="foundation.link"
+                    icon="pages"
+                    text="Live Copy Manager"
+                    target=".msm-tools-livecopies"
+                    variant="actionBar">
+                    <data
+                        jcr:primaryType="nt:unstructured"
+                        href.uritemplate="/apps/valtech-msm-tools/pages/livecopymanager.html{+item}"
+                        target="_blank"/>
+                </livecopyManager>
+                <notify
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                    activeSelectionCount="multiple"
+                    action="valtech.msmtools.blueprintManager.notify"
+                    text="Notify"
+                    icon="emailNotification"
+                    target=".msm-tools-livecopies"
+                    variant="primary">
+                    <granite:rendercondition
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="valtech-msm-tools/rendercondition/email-notification-action"/>
+                </notify>
+            </selection>
+        </actions>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="valtech-msm-tools/components/blueprintmanager/title"/>
+        <views jcr:primaryType="nt:unstructured">
+            <list
+                granite:rel="msm-tools-livecopies"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/table"
+                icon="viewList"
+                layoutId="list"
+                metaResourceType="cq/gui/components/coral/admin/page/meta"
+                modeGroup="msm-tools-livecopies"
+                path="${requestPathInfo.suffix}"
+                selectionMode="row">
+                <columns jcr:primaryType="nt:unstructured">
+                    <select
+                        jcr:primaryType="nt:unstructured"
+                        select="{Boolean}true"/>
+                    <region
+                        jcr:primaryType="nt:unstructured"
+                        sortable="{Boolean}true"
+                        jcr:title="Region"/>
+                    <language
+                        jcr:primaryType="nt:unstructured"
+                        sortable="{Boolean}true"
+                        jcr:title="Language"/>
+                    <state
+                        jcr:primaryType="nt:unstructured"
+                        sortable="{Boolean}true"
+                        jcr:title="State"/>
+                    <liveCopyPath
+                        jcr:primaryType="nt:unstructured"
+                        name="liveCopyPath"
+                        sortable="{Boolean}true"
+                        jcr:title="Live Copy"/>
+                    <lastUpdated
+                        jcr:primaryType="nt:unstructured"
+                        sortable="{Boolean}true"
+                        jcr:title="Updated"/>
+                </columns>
+                <datasource
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="valtech-msm-tools/components/blueprintmanager/datasource"
+                    itemResourceType="valtech-msm-tools/components/blueprintmanager/dataitem"
+                    path="${requestPathInfo.suffix}"/>
+            </list>
+        </views>
+    </jcr:content>
+</jcr:root>

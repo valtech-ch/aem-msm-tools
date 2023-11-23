@@ -1,0 +1,277 @@
+{
+  "live-copy-status": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent"
+    },
+    "blueprint": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:title": "Blueprint EN"
+      },
+      "new": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "new-published": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastReplicationAction": "Activate",
+          "cq:lastReplicated": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "conflicting": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "suspended": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "up-to-date-no-dates": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "up-to-date-with-modified-date": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "up-to-date-with-rollout-date": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "up-to-date-with-all-dates": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "up-to-date-with-all-dates-published": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00",
+          "cq:lastReplicationAction": "Activate",
+          "cq:lastReplicated": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "outdated": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "outdated2": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "outdated3": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "outdated-published": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00",
+          "cq:lastReplicationAction": "Activate",
+          "cq:lastReplicated": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "moved": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "moved-outdated": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "needs-review": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "cq:lastModified": "2023-11-01T17:00:00.000+00:00"
+        }
+      }
+    },
+    "live-copy": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:mixinTypes": ["cq:LiveRelationship","cq:LiveSync"],
+        "jcr-mixinTypes": ["cq:LiveRelationship","cq:LiveSync"],
+        "jcr:title": "Live Copy EN",
+        "cq:LiveSyncConfig": {
+          "jcr:primaryType": "cq:LiveCopy",
+          "cq:rolloutConfigs": ["/apps/msm/wcm/rolloutconfigs/default"],
+          "cq:master": "/content/live-copy-status/blueprint",
+          "cq:isDeep": true
+        }
+      },
+      "deleted": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"]
+        }
+      },
+      "local-only": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "conflicting": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      },
+      "suspended": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship", "cq:LiveSyncCancelled"]
+        }
+      },
+      "up-to-date-no-dates": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"]
+        }
+      },
+      "up-to-date-with-modified-date": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"]
+        }
+      },
+      "up-to-date-with-rollout-date": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "up-to-date-with-all-dates": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "up-to-date-with-all-dates-published": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T17:00:00.000+00:00"
+        }
+      },
+      "outdated": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T16:00:00.000+00:00"
+        }
+      },
+      "outdated2": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:propertyInheritanceCancelled": ["random-property-name"],
+          "cq:lastRolledout": "2023-11-01T16:00:00.000+00:00"
+        }
+      },
+      "outdated3": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:propertyInheritanceCancelled": ["msm-tools-previous-rollout"],
+          "cq:lastRolledout": "2023-11-01T16:00:00.000+00:00"
+        }
+      },
+      "outdated-published": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T16:00:00.000+00:00"
+        }
+      },
+      "moved": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T17:00:00.000+00:00",
+          "cq:LiveSyncConfig": {
+            "jcr:primaryType": "cq:LiveCopy",
+            "cq:master": "/content/live-copy-status/blueprint/moved",
+            "cq:moveTarget": "/content/live-copy-status/live-copy/moved",
+            "cq:isDeep": true
+          }
+        }
+      },
+      "moved-outdated": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "cq:lastRolledout": "2023-11-01T16:00:00.000+00:00",
+          "cq:LiveSyncConfig": {
+            "jcr:primaryType": "cq:LiveCopy",
+            "cq:master": "/content/live-copy-status/blueprint/moved",
+            "cq:moveTarget": "/content/live-copy-status/live-copy/moved-outdated",
+            "cq:isDeep": true
+          }
+        }
+      },
+      "needs-review": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr-mixinTypes": ["cq:LiveRelationship"],
+          "msm-tools-previous-rollout": "2023-11-01T16:00:00.000+00:00",
+          "cq:lastRolledout": "2023-11-01T17:00:00.000+00:00"
+        }
+      }
+    }
+  }
+}

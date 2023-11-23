@@ -1,0 +1,138 @@
+{
+  "msm-sites": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent"
+    },
+    "language-masters": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent"
+      },
+      "en": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Blueprint EN"
+        },
+        "page1": {
+          "jcr:primaryType": "cq:Page",
+          "jcr:content": {
+            "jcr:primaryType": "cq:PageContent"
+          }
+        }
+      },
+      "fr": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Blueprint FR"
+        }
+      }
+    },
+    "fr": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent"
+      },
+      "en": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Live Copy EN",
+          "cq:LiveSyncConfig": {
+            "jcr:primaryType": "cq:LiveCopy",
+            "cq:rolloutConfigs": ["/apps/msm/wcm/rolloutconfigs/default"],
+            "cq:master": "/content/msm-sites/language-masters/en",
+            "cq:isDeep": true
+          }
+        }
+      },
+      "fr": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Live Copy FR",
+          "cq:LiveSyncConfig": {
+            "jcr:primaryType": "cq:LiveCopy",
+            "cq:rolloutConfigs": ["/apps/msm/wcm/rolloutconfigs/default"],
+            "cq:master": "/content/msm-sites/language-masters/fr",
+            "cq:isDeep": true
+          }
+        }
+      }
+    },
+    "ch": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent"
+      },
+      "en": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Live Copy EN",
+          "cq:LiveSyncConfig": {
+            "jcr:primaryType": "cq:LiveCopy",
+            "cq:rolloutConfigs": ["/apps/msm/wcm/rolloutconfigs/default"],
+            "cq:master": "/content/msm-sites/language-masters/en",
+            "cq:isDeep": true
+          },
+          "container": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        },
+        "page-1": {
+          "jcr:primaryType": "cq:Page",
+          "jcr:content": {
+            "jcr:primaryType": "cq:PageContent",
+            "container": {
+              "jcr:primaryType": "nt:unstructured"
+            }
+          },
+          "page-1-1": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:content": {
+              "jcr:primaryType": "cq:PageContent",
+              "container": {
+                "jcr:primaryType": "nt:unstructured"
+              }
+            }
+          }
+        }
+      },
+      "fr": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Nested Live Copy fr-FR",
+          "cq:LiveSyncConfig": {
+            "jcr:primaryType": "cq:LiveCopy",
+            "cq:rolloutConfigs": ["/apps/msm/wcm/rolloutconfigs/default"],
+            "cq:master": "/content/msm-sites/fr/fr",
+            "cq:isDeep": true
+          }
+        }
+      },
+      "de": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent",
+          "jcr:title": "Normal site"
+        }
+      }
+    },
+    "non-reachable-blueprints": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent"
+      },
+      "en": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+          "jcr:primaryType": "cq:PageContent"
+        }
+      }
+    }
+  }
+}

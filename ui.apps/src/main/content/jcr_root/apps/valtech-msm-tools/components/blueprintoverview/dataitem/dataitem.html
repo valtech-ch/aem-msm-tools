@@ -1,0 +1,17 @@
+<tr data-sly-use.model="com.valtech.aem.msmtools.core.models.BlueprintOverviewDataItem"
+    is="coral-table-row"
+    class="foundation-collection-item"
+    data-foundation-collection-item-id="${model.blueprintPath}">
+    <td is="coral-table-cell">
+        <coral-checkbox coral-table-rowselect/>
+    </td>
+    <td is="coral-table-cell">
+        ${model.region}
+    </td>
+    <td is="coral-table-cell">
+        ${model.language}
+    </td>
+    <td is="coral-table-cell">
+        <a href="${model.blueprintManagerPage}${model.blueprintPath}" target="_blank">${model.blueprintPath}</a>
+    </td>
+</tr>
