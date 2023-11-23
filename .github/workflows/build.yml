@@ -52,5 +52,5 @@ jobs:
         if: ${{ inputs.releaseVersion != '' }}
         uses: actions/upload-artifact@v3
         with:
-          name: 'aem-package'
+          name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
           path: all/target/*.zip
