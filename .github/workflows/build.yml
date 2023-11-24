@@ -3,6 +3,7 @@ name: Build
 
 on:
   workflow_dispatch:
+  workflow_call:
     inputs:
       releaseVersion:
         description: 'Release version (major.minor.patch)'
@@ -43,7 +44,7 @@ jobs:
 
       - name: Prepare version
         if: ${{ inputs.releaseVersion != '' }}
-        run: 'mvn --batch-mode release:update-versions -DdevelopmentVersion=${{ inputs.releaseVersion }}'
+        run: 'mvn versions:set -DnewVersion=${{ inputs.releaseVersion }}'
 
       - name: Build & Test with Maven
         run: 'mvn clean install'

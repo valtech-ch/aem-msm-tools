@@ -1,0 +1,33 @@
+
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        description: 'Release version (major.minor.patch)'
+        required: true
+        default: ''
+
+jobs:
+  build-code:
+    name: Build Code
+    if: startsWith(github.ref, 'refs/heads/release/')
+    uses: ./.github/workflows/build.yml
+    with:
+      releaseVersion: ${{ inputs.releaseVersion }}
+  create-release:
+    name: Create release
+    if: startsWith(github.ref, 'refs/heads/release/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Package / Artifact
+          if: ${{ inputs.releaseVersion != '' }}
+          uses: actions/download-artifact@v3
+          with:
+            name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
+            path: ./artifacts
+      - name: Create Github Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create ${{ inputs.releaseVersion }} --draft --generate-notes --title ${{ inputs.releaseVersion }} ./artifacts/*.zip
