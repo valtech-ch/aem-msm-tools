@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Package / Artifact
-          if: ${{ inputs.releaseVersion != '' }}
-          uses: actions/download-artifact@v3
-          with:
-            name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
-            path: ./artifacts
+        if: ${{ inputs.releaseVersion != '' }}
+        uses: actions/download-artifact@v3
+        with:
+          name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
+          path: ./artifacts
       - name: Create Github Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
