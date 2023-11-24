@@ -1,5 +1,5 @@
 
-name: Build
+name: Release
 
 on:
   workflow_dispatch:
@@ -19,6 +19,7 @@ jobs:
       releaseVersion: ${{ inputs.releaseVersion }}
   create-release:
     name: Create release
+    needs: build-code
     if: startsWith(github.ref, 'refs/heads/release/')
     runs-on: ubuntu-latest
     steps:
