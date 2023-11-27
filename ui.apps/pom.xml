@@ -30,7 +30,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>msm-tool.ui.apps</artifactId>
+    <artifactId>msm-tools.ui.apps</artifactId>
     <packaging>content-package</packaging>
     <name>MSM Tool - UI apps</name>
     <description>UI apps package for MSM Tools</description>
@@ -52,12 +52,12 @@
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
                     <group>com.valtech.aem</group>
-                    <name>msm-tool.ui.apps</name>
+                    <name>msm-tools.ui.apps</name>
                     <packageType>application</packageType>
                                         <repositoryStructurePackages>
                         <repositoryStructurePackage>
                             <groupId>com.valtech.aem</groupId>
-                            <artifactId>msm-tool.ui.apps.structure</artifactId>
+                            <artifactId>msm-tools.ui.apps.structure</artifactId>
                         </repositoryStructurePackage>
                     </repositoryStructurePackages>
                     <dependencies>
@@ -108,7 +108,7 @@
     <dependencies>
         <dependency>
             <groupId>com.valtech.aem</groupId>
-            <artifactId>msm-tool.core</artifactId>
+            <artifactId>msm-tools.core</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -116,7 +116,7 @@
 
         <dependency>
             <groupId>com.valtech.aem</groupId>
-            <artifactId>msm-tool.ui.apps.structure</artifactId>
+            <artifactId>msm-tools.ui.apps.structure</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>

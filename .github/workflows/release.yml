@@ -1,5 +1,5 @@
 
-name: Release
+name: Prepare Release Draft
 
 on:
   workflow_dispatch:
@@ -33,7 +33,7 @@ jobs:
         with:
           name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
           path: ./artifacts
-      - name: Create Github Release
+      - name: Create Github Release Draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release create ${{ inputs.releaseVersion }} --draft --generate-notes --title ${{ inputs.releaseVersion }} ./artifacts/*.zip

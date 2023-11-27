@@ -31,7 +31,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>msm-tool.all</artifactId>
+    <artifactId>msm-tools.all</artifactId>
     <packaging>content-package</packaging>
     <name>MSM Tools - All</name>
     <description>All content package for MSM Tools</description>
@@ -56,13 +56,13 @@
                     <embeddeds>
                         <embedded>
                             <groupId>com.valtech.aem</groupId>
-                            <artifactId>msm-tool.ui.apps</artifactId>
+                            <artifactId>msm-tools.ui.apps</artifactId>
                             <type>zip</type>
                             <target>/apps/valtech-msm-tools-packages/application/install</target>
                         </embedded>
                         <embedded>
                             <groupId>com.valtech.aem</groupId>
-                            <artifactId>msm-tool.core</artifactId>
+                            <artifactId>msm-tools.core</artifactId>
                             <target>/apps/valtech-msm-tools-packages/application/install</target>
                         </embedded>
                     </embeddeds>
@@ -168,13 +168,13 @@
     <dependencies>
         <dependency>
             <groupId>com.valtech.aem</groupId>
-            <artifactId>msm-tool.ui.apps</artifactId>
+            <artifactId>msm-tools.ui.apps</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
         <dependency>
             <groupId>com.valtech.aem</groupId>
-            <artifactId>msm-tool.core</artifactId>
+            <artifactId>msm-tools.core</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

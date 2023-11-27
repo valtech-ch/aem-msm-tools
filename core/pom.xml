@@ -23,7 +23,7 @@
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>msm-tool.core</artifactId>
+    <artifactId>msm-tools.core</artifactId>
     <name>MSM Tools - Core</name>
     <description>Core bundle for MSM Tools</description>
     <build>
