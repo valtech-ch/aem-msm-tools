@@ -156,6 +156,48 @@ test, execute:
 
     mvn clean test
     
+### Embedding Into Existing Projects
+
+You can embed this tool into other projects by creating a local maven repo in your project by adding the following 
+repo definition in your main POM:
+
+    <repositories>
+        <repository>
+            <id>local-repo</id>
+            <url>file:nonadobedependencies</url>
+            <name>Repository</name>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories> 
+    
+Afterwards, download the desired release package and execute the following command:
+
+    mvn install:install-file -Dfile={downloaded package file} -DgroupId=com.valtech.aem -DartifactId=msm-tools.all -Dversion={version} -Dpackaging=zip -DlocalRepositoryPath=./nonadobedependencies
+
+The last step is to include the package as a dependency in your `all` package, by using the dependency definition:
+
+    <dependency>
+      <groupId>com.valtech.aem</groupId>
+      <artifactId>msm-tools.all</artifactId>
+      <version>{version}</version>
+      <type>zip</type>
+    </dependency>
+
+And including into the `embeddeds` definition of your `filevault-package-maven-plugin`:
+    
+    <ebedded>
+      <groupId>com.valtech.aem</groupId>
+      <artifactId>msm-tools.all</artifactId>
+      <type>zip</type>
+      <target>{location of your other vendor packages under /apps}</target>
+    </ebedded>
+
 ## License
 
-The SaaS AEM module is licensed under the [MIT LICENSE](LICENSE).
+The AEM MSM Tools module is licensed under the [MIT LICENSE](LICENSE).
