@@ -15,7 +15,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>msm-tool.ui.apps.structure</artifactId>
+    <artifactId>msm-tools.ui.apps.structure</artifactId>
     <packaging>content-package</packaging>
     <name>MSM Tools - Repository Structure Package</name>
     <description>

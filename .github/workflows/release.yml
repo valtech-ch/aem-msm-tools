@@ -1,5 +1,5 @@
 
-name: Release
+name: Prepare Release Draft
 
 on:
   workflow_dispatch:
@@ -23,13 +23,17 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/release/')
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
       - name: Download Package / Artifact
         if: ${{ inputs.releaseVersion != '' }}
         uses: actions/download-artifact@v3
         with:
           name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
           path: ./artifacts
-      - name: Create Github Release
+      - name: Create Github Release Draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release create ${{ inputs.releaseVersion }} --draft --generate-notes --title ${{ inputs.releaseVersion }} ./artifacts/*.zip
