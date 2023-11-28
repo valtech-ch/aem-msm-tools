@@ -115,6 +115,9 @@ Service class: **com.valtech.aem.msmtools.core.services.impl.NotificationService
 | emailContent | Default E-mail Content | Will be used if the editor did not provide a custom notification e-mail subject. |  |
 | siteOwnerEmailPageProperty | Site Owner E-mail Page Property Name | Page property where site owner e-mails are stored (may be of type String[]), to which the notification e-mails will be sent. | siteOwnerEmail |
 ## Code
+
+The project/code uses java 11 and is compatible only with AEMaaCS. 
+
 ### Modules
 
 The main parts of the template are:
