@@ -29,7 +29,7 @@ jobs:
           fetch-depth: '0'
       - name: Download Package / Artifact
         if: ${{ inputs.releaseVersion != '' }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'aem-msm-tools-${{ inputs.releaseVersion }}'
           path: ./artifacts
